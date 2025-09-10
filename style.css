@@ -33,7 +33,14 @@ header .container { display:flex; justify-content:space-between; align-items:cen
 .portfolio-section { padding:60px 0; text-align:center; }
 .slider { position:relative; max-width:800px; margin:auto; overflow:hidden; border-radius:10px; }
 .slides { display:flex; }
-.slide { min-width:100%; display:none; max-height:400px; margin:0 auto; object-fit:cover; border-radius:10px; }
+.slide { 
+    min-width:100%; 
+    display:none; 
+    max-height:400px; 
+    margin:0 auto; 
+    object-fit:contain;  /* mantém a imagem inteira */
+    border-radius:10px; 
+}
 .slide.active { display:block; }
 .slider-controls { position:absolute; top:50%; width:100%; display:flex; justify-content:space-between; }
 
@@ -75,5 +82,5 @@ footer { background:#2e7d32; color:#fff; text-align:center; padding:20px; }
 
   /* Ajustes extras para celular */
   .video-gallery video { max-width:280px; }
-  .slide { max-height:250px; }
+  .slide { max-height:250px; object-fit:contain; }
 }
