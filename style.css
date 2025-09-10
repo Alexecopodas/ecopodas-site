@@ -1,75 +1,306 @@
-/* style.css atualizado apenas para responsividade, mantendo todos os textos originais */
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto',sans-serif; }
-body { line-height:1.6; color:#333; scroll-behavior:smooth; }
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container padrão */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
 /* Header */
-header { background:#2e7d32; color:#fff; padding:15px 0; position:sticky; top:0; z-index:100; }
-header .container { display:flex; justify-content:space-between; align-items:center; width:90%; margin:auto; }
-.logo { height:50px; }
-.nav-links { list-style:none; display:flex; gap:20px; }
-.nav-links li a { color:#fff; text-decoration:none; font-weight:500; }
-.nav-links.active { display:flex; flex-direction:column; background:#2e7d32; position:absolute; top:70px; right:0; width:200px; text-align:center; padding:20px; }
-.hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
-.hamburger span { width:25px; height:3px; background:#fff; }
+header {
+    background: #2d572c;
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-/* Banner Home */
-.home-section .banner { position:relative; width:100%; height:auto; }
-.home-section .banner img { width:100%; height:auto; object-fit:cover; }
-.banner-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; text-align:center; background:rgba(0,0,0,0.4); padding:20px; border-radius:10px; }
-.btn { background:#f1c40f; color:#333; padding:10px 25px; border:none; cursor:pointer; text-decoration:none; font-weight:bold; border-radius:5px; display:inline-block; margin-top:10px; }
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+/* Menu Hamburger (mobile) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+/* Banner */
+.home-section .banner {
+    position: relative;
+    text-align: center;
+}
+
+.home-section img {
+    width: 100%;
+    height: auto;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    text-align: center;
+}
+
+.banner-text h1 {
+    font-size: 2.5rem;
+}
+
+/* Botões */
+.btn {
+    background: #2d572c;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1e3a1d;
+}
+
+/* Seções */
+section {
+    padding: 60px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #2d572c;
+}
 
 /* Sobre */
-.sobre-section { padding:60px 0; text-align:center; }
-.sobre-content { display:flex; flex-direction:column; align-items:center; gap:20px; }
-.ceo-img { width:200px; height:200px; border-radius:50%; object-fit:cover; object-position:top center; }
+.sobre-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ceo-img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
 
 /* Serviços */
-.servicos-section { padding:60px 0; text-align:center; }
-.cards { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-.card { background:#e8f5e9; padding:20px; border-radius:10px; width:250px; }
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 250px;
+    text-align: center;
+}
 
 /* Portfólio */
-.portfolio-section { padding:60px 0; text-align:center; }
-.slider { position:relative; max-width:400px; margin:auto; overflow:hidden; border-radius:10px; }
-.slides { display:flex; }
-.slide { min-width:100%; display:none; }
-.slide.active { display:block; }
-.slider-controls { position:absolute; top:50%; width:100%; display:flex; justify-content:space-between; }
+.slider {
+    position: relative;
+    text-align: center;
+}
+
+.slides {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.slide {
+    display: none;
+    max-width: 100%;
+    max-height: 400px; /* Fotos ficam menores no PC/tablet */
+    border-radius: 10px;
+}
+
+.slide.active {
+    display: block;
+    margin: 0 auto;
+}
+
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls span {
+    cursor: pointer;
+    font-size: 2rem;
+    color: #2d572c;
+    padding: 10px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+}
 
 /* Vídeos */
-.videos-section { padding:60px 0; text-align:center; }
-.video-gallery { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.video-gallery video { width:350px; max-width:100%; border-radius:10px; cursor:pointer; }
+.video-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centraliza os vídeos */
+}
+
+.video-gallery video {
+    width: 100%;
+    max-width: 350px; /* Tamanho controlado no PC/tablet */
+    border-radius: 10px;
+}
 
 /* Contato */
-.contato-section { padding:60px 0; text-align:center; }
-.contato-content { display:flex; flex-direction:column; align-items:center; gap:20px; }
-.contato-content form { display:flex; flex-direction:column; gap:15px; width:100%; max-width:400px; }
-.contato-content input, .contato-content textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
-.contato-botoes { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
-.btn-contato { padding:10px 20px; border-radius:5px; color:#fff; text-decoration:none; font-weight:bold; }
-.btn-contato.whatsapp { background:#25d366; }
-.btn-contato.email { background:#0072c6; }
-.btn-contato.instagram { background:#e4405f; }
+.contato-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+form {
+    flex: 1;
+    min-width: 250px;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-contato {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.whatsapp { background: #25d366; }
+.email { background: #555; }
+.instagram { background: #e1306c; }
 
 /* Footer */
-footer { background:#2e7d32; color:#fff; text-align:center; padding:20px; }
+footer {
+    background: #2d572c;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
 
-/* Responsivo */
-@media(max-width:1024px){
-  .cards { flex-direction:column; align-items:center; }
-}
+/* Responsividade */
 @media(max-width:768px){
-  .hamburger { display:flex; }
-  .nav-links { display:none; }
-  .nav-links.active { display:flex; }
-  .video-gallery { flex-direction:column; }
-  .slides { display:block; }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #2d572c;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .sobre-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
+
+/* Ajustes para celular pequeno */
 @media(max-width:480px){
-  .banner-text h1 { font-size:24px; }
-  .btn { padding:8px 15px; }
-  .card { width:90%; }
-  .ceo-img { width:150px; height:150px; }
+    .banner-text h1 { font-size:24px; }
+    .btn { padding:8px 15px; }
+    .card { width:90%; }
+    .ceo-img { width:150px; height:150px; }
+
+    /* Novos ajustes */
+    .video-gallery video {
+        max-width: 280px; /* vídeos menores no celular */
+    }
+
+    .slide {
+        max-height: 250px; /* fotos menores no celular */
+    }
 }
