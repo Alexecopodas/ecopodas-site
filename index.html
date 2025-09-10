@@ -181,31 +181,22 @@
 
         // Vídeos
         const videos = document.querySelectorAll(".video-gallery video");
-
-        for (let i = 0; i < videos.length; i++) {
-            videos[i].addEventListener("ended", () => {
-                if (i + 1 < videos.length) {
-                    videos[i + 1].play();
-                }
+        videos.forEach((video, i) => {
+            video.addEventListener("ended", () => {
+                if (i + 1 < videos.length) videos[i + 1].play();
             });
-            videos[i].addEventListener("click", () => {
-                if (videos[i].paused) {
-                    videos[i].play();
-                } else {
-                    videos[i].pause();
-                }
+            video.addEventListener("click", () => {
+                video.paused ? video.play() : video.pause();
             });
-        }
+        });
 
-        // Clicar no menu "Vídeos"
-        document.querySelector('a[href="#videos"]').addEventListener("click", (e) => {
-            e.preventDefault();
-            document.querySelector("#videos").scrollIntoView({ behavior: "smooth" });
-            setTimeout(() => {
-                if (videos.length > 0) {
-                    videos[0].play();
-                }
-            }, 800);
+        // Scroll suave
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
         });
     </script>
 </body>
