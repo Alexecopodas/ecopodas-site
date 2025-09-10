@@ -24,23 +24,23 @@ header .container { display:flex; justify-content:space-between; align-items:cen
 .sobre-content { display:flex; flex-direction:column; align-items:center; gap:20px; }
 .ceo-img { width:200px; height:200px; border-radius:50%; object-fit:cover; object-position:top center; }
 
-/* Serviços */
+/* ServiÃ§os */
 .servicos-section { padding:60px 0; text-align:center; }
 .cards { display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
 .card { background:#e8f5e9; padding:20px; border-radius:10px; width:250px; }
 
-/* Portfólio */
+/* PortfÃ³lio */
 .portfolio-section { padding:60px 0; text-align:center; }
-.slider { position:relative; max-width:800px; margin:auto; overflow:hidden; border-radius:10px; }
+.slider { position:relative; max-width:400px; margin:auto; overflow:hidden; border-radius:10px; }
 .slides { display:flex; }
 .slide { min-width:100%; display:none; }
 .slide.active { display:block; }
 .slider-controls { position:absolute; top:50%; width:100%; display:flex; justify-content:space-between; }
 
-/* Vídeos */
+/* VÃ­deos */
 .videos-section { padding:60px 0; text-align:center; }
 .video-gallery { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
-.video-gallery video { width:300px; max-width:100%; border-radius:10px; cursor:pointer; }
+.video-gallery video { width:350px; max-width:100%; border-radius:10px; cursor:pointer; }
 
 /* Contato */
 .contato-section { padding:60px 0; text-align:center; }
